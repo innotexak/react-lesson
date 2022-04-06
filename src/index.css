@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  width:100%;
+  /* background-color: red; */
+}
+
+.container{
+  width:70%;
+  background: #fefefe;
+  margin:auto;
+
+}
+
+.navbar{
+  display: flex;
+  background: linear-gradient(90deg, blue 30%, purple 70%);
+  align-items: center;
+  justify-content: space-between;
+  width:100%;
+  height: 3rem;
+}
+
+.navbar > span img {
+  width:50px;
+  height:50px;
+}
+.navbar-menu{
+  list-style: none;
+ 
+  color:rgb(19, 17, 17);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+}
+
+.menu-item a{
+  width:auto;
+  padding:10px;
+  color:white;
+  text-decoration: none;
+}
+
+.navbar-menu:last-child{
+  margin-right: 5rem;
+}
+
+.hero{
+  width:100%;
+  height: 70vh;
+  background-image: url('./components/assets/bg.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 50px;
+  background-repeat: no-repeat;
+
 }
