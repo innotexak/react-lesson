@@ -10,9 +10,10 @@ body{
 }
 
 .container{
-  width:70%;
+  width:85%;
   background: #fefefe;
   margin:auto;
+  height: auto;
 
 }
 
@@ -60,5 +61,51 @@ body{
   color:white;
   font-size: 50px;
   background-repeat: no-repeat;
+
+}
+
+
+
+.service-container{
+  width:100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color:black;
+}
+
+.box{
+  border-radius: 8px;
+  box-shadow: 2px 5px 8px rgb(19, 17, 17);
+  padding:25px;
+  margin:2rem 10px;
+  background-color:rgb(226, 226, 238);
+  position: relative;
+}
+
+.box h2{
+  width:100%;
+  background-color:rgb(226, 226, 238);
+  color:purple;
+  font-size: 23px;
+  text-align: center;
+  padding:10px 2px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: cursive;
+}
+
+.box p{
+  text-align: justify;
+  font-size: 18px;
+}
+.box span{
+  display: inline-block;
+  right: 30px;
+  position:absolute;
+  color:purple;
+  font-weight: 800px;
+  
+
 
 }
