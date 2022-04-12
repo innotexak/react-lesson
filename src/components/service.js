@@ -5,8 +5,8 @@ export default function Service(){
     // data.map(item=>{return()})
 
     return(
-        <div className='service-container'>
-          <ListItem value={data}/>
+        <div className='service-container' id="service">
+          <ListItem x={data}/>
         </div>
     )
 }

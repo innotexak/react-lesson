@@ -1,12 +1,10 @@
 import React from 'react'
-export default function ListItem(props){
-const {value} = props
-console.log("value", value)
+export default function ListItem({x}){
  return(<>
     {
-        value.map((item, pos)=>{
+        x.map((item)=>{
            return(
-             <div className='box' key={pos} >
+             <div className='box' key={item.id} >
              <h2 >{item.title}</h2>
              <p>
                  {item.content}

@@ -105,7 +105,103 @@ body{
   position:absolute;
   color:purple;
   font-weight: 800px;
+
+}
+/* About css */
+.about-container{
+  width:70%;
+  margin: 3rem auto;
+  height: auto;
+
+}
+
+.about-container h2{
+  font-size: 25px;
+  margin:auto;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+
+}
+
+.about-container p{
+  font-size: 20px;
+  text-align: justify;
+  border-bottom:2px solid #6c2558;
+  border-top:2px solid #6c2558;
+  padding:6px 0px;
+}
+
+
+
+/* end of about css */
+
+
+/* contact */
+
+.contat-container{
+  width:100%;
+  height: auto;
+}
+
+.contat-container h2{
+font-size: 23px;
+
+}
+
+.image{
   
+}
+
+.section{
+  display:flex;
+  justify-content: space-between;
+}
+.form{
+
+}
+
+
+/*  end of contact */
+
+/* Responsiveness  */
+
+@media screen and (max-width:950px){
+  .service-container{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-container:nth-child(3){
+    width:100%;
+    background:red;
+  }
+}
+@media screen and (max-width:500px) {
+  .service-container{
+    flex-direction: column ;
+  }
+  .hero h2{
+    font-size:26px
+  }
+}
+
+@media screen and (max-width:380px) {
+  .service-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .box p{
+    font-size: 12px;
+    padding:2px;
+  }
+  .box h2{
+    font-size: 12px;
+  }
+  .hero h2{
+    font-size:23px
+  }
 
 
 }
