@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 
 class About extends Component{
-// Here you can write your state 
+// Here you can write your stateconst
+
 
 
     render(){
+
         // Here you can write any javascript 
         const {data}  = this.props
-        console.log(data)
 
 
         return(
