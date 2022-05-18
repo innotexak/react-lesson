@@ -1,81 +1,35 @@
-import React,{useState} from 'react'
-import About from './components/About';
-import { Contact } from './components/Contact';
-import Footer from './components/Footer';
-import { Form } from './components/Forms';
-import { Landing } from './components/Landing';
-import {Navbar }  from './components/Navbar';
-import Service from './components/service';
+import React from "react";
+import {Routes, Route} from 'react-router-dom'
+
+// importing apges 
+import Post from "./components/pages/About";
+import Service from "./components/pages/Service";
+import Home from "./components/pages/Home";
+import Error from "./components/pages/Error";
+import Navbar from "./components/pages/Navbar";
+import Footer from "./components/pages/Footer";
+import { Forms } from "./components/pages/Forms";
 
 
 const App = ()=>{
-
-const [data, setData] = useState({name:"John", message:"Welcome boss", number:10000})
-
-
-
-const [show, setShow] = useState(true)
-
-
-
-
-
-
-
-
-
-
-const handleDecrease=()=>{
- if(data.number > 0){
-    setData({
-        number: data.number - 1,
-        message:""
-    }) 
- }else{
-   setData({
-     message: `You can't go bello ${data.number}!` 
-   })
- }
-}
   
-const handleReset=()=>{     
-    setData({
-        number: 0,
-        message:""
-    }) 
-}
-  const handleIncrease=()=>{     
-  if(data.number < 20){
-    setData({
-      number:data.number + 1,
-      message:""
-  }) 
-  }else{
-    setData({
-      message: `You can't go above ${data.number}!` 
-    })
-  }
-}
-  
-  
-  return (<>
-    <Navbar/>
-    <Landing/>
-    <Form/>
-      {/* <div className='container'>
-        <Service/>
-        <About data="We are commited to rendering the best!"/>
- 
-      {
-        show &&
-        <Footer state={data} handleDecrease={handleDecrease} handleIncrease={handleIncrease} handleReset={handleReset}/>
-        
-      }
-        
-        <button onClick={()=>setShow(!show)}>{show?"Close":"Open"}</button>
-      </div> */}
- </>
-)
+  return (
+  <>
+  {/* Universal route */}
+  <Navbar/>
+  <Routes>
+    <Route exact path="/" element={<Home/>}/>
+    <Route exact path="/post/:id" element={<Post/>}/>
+    <Route exact path="/service" element={<Service/>}/>
+    <Route exact path="/forms" element={<Forms/>}/>
+    <Route path="*" element={<Error/>}/>
+  </Routes>
+
+  {/* Universal route */}
+  <Footer/>
+  </>
+  )
+
  };
 
 
