@@ -19,7 +19,7 @@ const Post = ()=>{
         }
 
     blogFetch()
-   },[data])
+   },[])
 
     return(
         <div>
