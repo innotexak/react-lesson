@@ -1,12 +1,16 @@
 
 
-import React, {useState} from 'react'
-import { AppBar, Avatar, Badge, makeStyles, Toolbar, Typography } from '@material-ui/core'
-import Menu from '@mui/icons-material/Menu'
+import React from 'react'
+import { AppBar, Avatar, Badge, Grid, makeStyles, Menu, Toolbar, Typography } from '@material-ui/core'
+
+import AppsIcon from '@mui/icons-material/Apps';
+import { Dashboard, DashboardSharp, VideoCall } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme)=>({
  
-
+    app:{
+      boxShadow:"0px 0px 0px 0px white",
+    },
     v:{
         color:"black",
         marginTop:theme.spacing(4),
@@ -14,6 +18,7 @@ const useStyles = makeStyles((theme)=>({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
+        boxShadow:"0px 0px 0px 0px white",
     },
     
     toolbar:{
@@ -21,21 +26,61 @@ const useStyles = makeStyles((theme)=>({
         justifyContent:"flex-end",
         alignItems:"center",
         background:"white",
-        color:"black"
+        color:"black",
+        boxShadow:"0px 0px 0px 0px white",
+     
     },
 
     badge:{
-        marginLeft:theme.spacing(2)
+        marginLeft:theme.spacing(2),
+ 
     },
 
     icon:{
         width:"30px",
-        height:"30px"
+        height:"30px",
+        color:theme.palette.error.light,
+    },
+
+    appDisplay:{
+      position:"fixed",
+      display:"flex",
+      flexWrap:"wrap",
+      justifyContent:'center',
+      alignItems:"center",
+      marginTop:theme.spacing(9),
+      width:"300px",
+      height:"300px",
+      top:"0px",
+      right:"0px",
+      zIndex:"0",
+      marginRight:theme.spacing(2),
+      padding:theme.spacing(1),
+      backgroundColor:theme.palette.common.white,
+      border:"1px solid #ececec",
+      overflowY:"auto",
+      boxShadow:"2px 2px 2px 2px #ececec",
+    },
+
+    item:{
+      display:"flex",
+      width:"80px",
+      width:"70px",
+      justifyContent:"center",
+      flexDirection:"column",
+      alignItems:"center",
+      border:"1px solid #ececec",
+      borderRadius:"4px",
+      padding:theme.spacing(1),
+      margin:theme.spacing(1),
+
+
     }
 
 }))
 
 export default function Navbar(){
+  const [open, setOpen] = React.useState(false)
     const classes = useStyles()
     return(
         < >
@@ -46,7 +91,10 @@ export default function Navbar(){
                             <Badge className={classes.badge}>Gmail</Badge>
                             <Badge className={classes.badge}>Images</Badge>
                             <Badge className={classes.badge}>
-                                <Menu/>
+                                <AppsIcon onClick={()=>setOpen(!open)}/>
+                                
+           
+
                             </Badge>
                             <Badge>
                             <Avatar alt="image"  className={classes.badge}/>
@@ -54,7 +102,56 @@ export default function Navbar(){
                     </Toolbar>
             </AppBar>
             </div>
-
+           {open &&  <Grid  container className={classes.appDisplay} position="fixed">
+              <Grid item className={classes.item}>
+                <DashboardSharp/> 
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+              <DashboardSharp/> 
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+              <DashboardSharp/> 
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+                <VideoCall/>
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+              <DashboardSharp/>  
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+              <DashboardSharp/> 
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+              <DashboardSharp/> 
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+              <Grid item className={classes.item}>
+              <DashboardSharp/> 
+                <Typography variant='span'>
+                  Photos
+                </Typography>
+              </Grid>
+            </Grid>}
         </>
     )
 }

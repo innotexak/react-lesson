@@ -87,7 +87,7 @@ export default function Google(){
                </div>
                <div className={classes.inputCont}>
                    <Search className={classes.search}/>
-                   <InputBase  className={classes.input}/>
+                   <InputBase placeholder='Search google or type a url' className={classes.input}/>
                    <MicIcon className={classes.mic}/>
                </div>
                
